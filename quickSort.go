@@ -29,13 +29,13 @@ func partition(data []int, start, end int) int {
 
 	for i := start; i <= end; i++ {
 		if data[i] < data[end] {
-			small = small + 1
+			small++
 			if small != i {
 				data[small], data[i] = data[i], data[small]
 			}
 		}
 	}
-	small = small + 1
+	small++
 	data[end], data[small] = data[small], data[end]
 
 	return small
