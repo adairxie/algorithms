@@ -54,11 +54,11 @@ func IsBinaryTree(root *BinaryTreeNode) bool {
 
 func main() {
 	root := &BinaryTreeNode{Value: 1}
-	left := &BinaryTreeNode{Value: 2}
-	//right := &BinaryTreeNode{Value: 3}
+	//left := &BinaryTreeNode{Value: 2}
+	right := &BinaryTreeNode{Value: 3}
 
-	root.Left = left
-	//root.Right = right
+	//root.Left = left
+	root.Right = right
 	
 	if IsBinaryTree(root) {
 		fmt.Println("Is a complete binary tree!")
