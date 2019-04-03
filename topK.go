@@ -5,7 +5,7 @@ import (
 	"math/rand"
 )
 
-// 随机生成一个index, index的左边是比它的值，右边是比它小的值
+// 随机生成一个index, index的左边是比它的值大，右边是比它小的值
 func partition(nums []int, start, end int) int {
 	if start >= end {
 		return start
@@ -39,11 +39,11 @@ func topK(nums []int, k int) []int {
 	index := partition(nums, start, end)
 
 	for index != k-1 {
-		if index > start {
+		if k-1 < index {
 			index = partition(nums, start, index-1)
 		}
 
-		if index < end {
+		if k-1 > index {
 			index = partition(nums, index+1, end)
 		}
 	}
@@ -52,7 +52,7 @@ func topK(nums []int, k int) []int {
 }
 
 func main() {
-	array := []int{8, 1, 2, 4, 4}
+	array := []int{3, 1, 2, 4, 5}
 
 	res := topK(array, 3)
 	for _, v := range res {
