@@ -98,7 +98,7 @@ func sortBlocks(blockCh <-chan *[]string, saveCh chan<- *[]string) {
 		if Options.Quicksort {
 			sort.Sort(Alphabetical(*block))
 		} else {
-			HeapSort(Alphabetical(*block))
+			Heapsort(Alphabetical(*block))
 		}
 		timeSorting += time.Since(start)
 		saveCh <- block
